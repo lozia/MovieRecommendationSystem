@@ -1,0 +1,23 @@
+# This is a reminder of commands of starting services
+# Start mongodb service
+sudo mongod -config /usr/local/mongodb/data/mongodb.conf
+
+# Start Redis
+/usr/local/opt/redis/bin/redis-server /usr/local/etc/redis.conf
+#redis-cli
+
+# ES service
+#elasticsearch -d
+
+
+#zookeeper 
+#zkServer start
+
+#kafka
+/usr/local/opt/kafka/bin/kafka-server-start -daemon /usr/local/etc/kafka/server.properties
+/usr/local/opt/kafka/bin/kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic rs
+/usr/local/opt/kafka/bin/kafka-console-producer --broker-list localhost:9092 --topic rs
+/usr/local/opt/kafka/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic rs
+
+#spark
+#Spark-shell
